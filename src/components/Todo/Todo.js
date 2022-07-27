@@ -1,16 +1,11 @@
 import "./Todo.scss";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import {
-  addTodoRequest,
-  fetchTodoRequest,
   removeTodoRequest,
   updateTodoRequest,
 } from "../../store/todos/actions";
-import { doc, setDoc } from "firebase/firestore";
-import { db } from "../../services/firestore";
-import { v4 as uuidv4 } from "uuid";
-import { Button, Card, Switch, Skeleton, Modal, Row, Form, Input } from "antd";
+import { Switch, Modal, Form, Input } from "antd";
 import {
   DeleteOutlined,
   EditOutlined,
@@ -21,7 +16,6 @@ import {
   CloseSquareTwoTone,
 } from "@ant-design/icons";
 
-const { Meta } = Card;
 const { TextArea } = Input;
 
 const Todo = ({ todo, isLoading }) => {
