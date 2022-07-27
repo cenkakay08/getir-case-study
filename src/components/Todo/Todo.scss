@@ -1,0 +1,87 @@
+.todo-wrapper {
+  width: 500px;
+  height: 400px;
+}
+
+#basic {
+  width: 100%;
+  height: 100%;
+}
+
+.todo-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 1;
+  justify-content: space-between;
+
+  &:hover {
+    .todo-card-delete-icon {
+      opacity: 1;
+      transition: opacity 0.5s ease-out;
+    }
+
+    .todo-card-edit-icon {
+      opacity: 1;
+      transition: opacity 0.5s ease-out;
+    }
+  }
+
+  .todo-card-top-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .todo-card-date-text {
+    align-self: flex-end;
+  }
+
+  .todo-card-description {
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+
+  .todo-card-save-icon {
+    position: absolute;
+    top: -32px;
+    right: 8px;
+    font-size: 24px;
+  }
+
+  .todo-card-cancel-icon {
+    position: absolute;
+    top: -32px;
+    right: 40px;
+    font-size: 24px;
+  }
+
+  .todo-card-delete-icon {
+    position: absolute;
+    color: red;
+    opacity: 0;
+    font-size: 24px;
+    align-self: flex-start;
+
+    &.edit {
+      right: 72px;
+      opacity: 1;
+      top: -32px;
+    }
+  }
+
+  .todo-card-edit-icon {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    color: green;
+    opacity: 0;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}

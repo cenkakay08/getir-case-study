@@ -1,0 +1,22 @@
+.add-todo-container {
+  max-width: 750px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 64px;
+
+  @media screen and (max-width: 575px) {
+    height: 500px;
+  }
+}
+
+.add-todo-form-title {
+  .ant-form-item-row {
+    gap: 32px;
+
+    @media screen and (max-width: 575px) {
+      gap: unset;
+    }
+  }
+}
