@@ -1,4 +1,5 @@
 import * as TodoActions from "./types";
+import { openNotificationWithIcon } from "../../services/notifications";
 
 const initialState = {
   todos: {
@@ -45,6 +46,7 @@ const todosReducer = (state = initialState, action) => {
         },
       };
     case TodoActions.ADD_TODO_SUCCESS:
+      openNotificationWithIcon(TodoActions.ADD_TODO_SUCCESS);
       return {
         ...state,
         todos: {
@@ -55,34 +57,7 @@ const todosReducer = (state = initialState, action) => {
       };
 
     case TodoActions.ADD_TODO_FAILURE:
-      return {
-        ...state,
-        todos: {
-          ...state.todos,
-          error: action.payload,
-          isLoading: false,
-        },
-      };
-    case TodoActions.REMOVE_TODO_REQUEST:
-      return {
-        ...state,
-        todos: {
-          ...state.todos,
-          isLoading: true,
-        },
-      };
-    case TodoActions.REMOVE_TODO_SUCCESS:
-      return {
-        ...state,
-        todos: {
-          ...state.todos,
-          data: state.todos.data.filter(
-            (todo) => todo.id !== action.payload.id
-          ),
-          isLoading: false,
-        },
-      };
-    case TodoActions.REMOVE_TODO_FAILURE:
+      openNotificationWithIcon(TodoActions.ADD_TODO_FAILURE);
       return {
         ...state,
         todos: {
@@ -100,6 +75,7 @@ const todosReducer = (state = initialState, action) => {
         },
       };
     case TodoActions.UPDATE_TODO_SUCCESS:
+      openNotificationWithIcon(TodoActions.UPDATE_TODO_SUCCESS);
       return {
         ...state,
         todos: {
@@ -111,6 +87,38 @@ const todosReducer = (state = initialState, action) => {
         },
       };
     case TodoActions.UPDATE_TODO_FAILURE:
+      openNotificationWithIcon(TodoActions.UPDATE_TODO_FAILURE);
+      return {
+        ...state,
+        todos: {
+          ...state.todos,
+          error: action.payload,
+          isLoading: false,
+        },
+      };
+
+    case TodoActions.REMOVE_TODO_REQUEST:
+      return {
+        ...state,
+        todos: {
+          ...state.todos,
+          isLoading: true,
+        },
+      };
+    case TodoActions.REMOVE_TODO_SUCCESS:
+      openNotificationWithIcon(TodoActions.REMOVE_TODO_SUCCESS);
+      return {
+        ...state,
+        todos: {
+          ...state.todos,
+          data: state.todos.data.filter(
+            (todo) => todo.id !== action.payload.id
+          ),
+          isLoading: false,
+        },
+      };
+    case TodoActions.REMOVE_TODO_FAILURE:
+      openNotificationWithIcon(TodoActions.REMOVE_TODO_FAILURE);
       return {
         ...state,
         todos: {

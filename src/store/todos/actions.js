@@ -23,10 +23,10 @@ export const addTodoRequest = createAction(ADD_TODO_REQUEST);
 export const addTodoSuccess = createAction(ADD_TODO_SUCCESS);
 export const addTodoFailure = createAction(ADD_TODO_FAILURE);
 
-export const removeTodoRequest = createAction(REMOVE_TODO_REQUEST);
-export const removeTodoSuccess = createAction(REMOVE_TODO_SUCCESS);
-export const removeTodoFailure = createAction(REMOVE_TODO_FAILURE);
-
 export const updateTodoRequest = createAction(UPDATE_TODO_REQUEST);
 export const updateTodoSuccess = createAction(UPDATE_TODO_SUCCESS);
 export const updateTodoFailure = createAction(UPDATE_TODO_FAILURE);
+
+export const removeTodoRequest = createAction(REMOVE_TODO_REQUEST);
+export const removeTodoSuccess = createAction(REMOVE_TODO_SUCCESS);
+export const removeTodoFailure = createAction(REMOVE_TODO_FAILURE);
