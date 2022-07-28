@@ -104,6 +104,7 @@ const Todo = ({ todo, isLoading }) => {
                 name="isCompleted"
                 valuePropName="checked"
                 initialValue={todo.isCompleted}
+                style={{ display: "flex", justifyContent: "flex-end" }}
               >
                 <Switch
                   checkedChildren="Completed"

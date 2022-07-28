@@ -1,4 +1,4 @@
-import { Button, Switch, Form, Input, Typography } from "antd";
+import { Button, Switch, Form, Input, Typography, Space } from "antd";
 import { v4 as uuidv4 } from "uuid";
 import { useDispatch } from "react-redux";
 import { addTodoRequest } from "../../store/todos/actions";
@@ -45,10 +45,11 @@ const AddTodo = () => {
           name="isCompleted"
           valuePropName="checked"
           initialValue={false}
+          style={{ display: "flex", justifyContent: "flex-end" }}
         >
           <Switch checkedChildren="Completed" unCheckedChildren="Uncompleted" />
         </Form.Item>
-        <Form.Item>
+        <Form.Item style={{ display: "flex", justifyContent: "flex-end" }}>
           <Button type="primary" htmlType="submit">
             Submit
           </Button>
