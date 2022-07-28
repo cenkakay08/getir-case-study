@@ -43,6 +43,7 @@
   }
 
   .todo-card-description {
+    line-break: anywhere;
     flex-grow: 1;
     overflow-y: auto;
   }
